@@ -100,21 +100,21 @@ Next hop: the IP address of the next hop router or the outgoing interface
 - Connect R2 to A2
 - Route from Ax to Rx default=>ip of Rx
 ---
-## Level 6 (Connect host to internet) ✅
+## Level 6 (Connect host to internet)
 
 ### Solution:
 - Connect R1 to A1
 - Set router to default gateway
 - Route internet to A1/28
 ---
-## Level 7 (Connect host1 to host2 via 2 routers) ✅
+## Level 7 (Connect host1 to host2 via 2 routers)
 
 ### Solution:
 - clear all
 - Set all masks to /28
 - fill all
 ---
-## Level 8 (Connect 2 host to internet and each other) ✅
+## Level 8 (Connect 2 host to internet and each other)
 
 ### Solution:
 - Default routes
@@ -124,7 +124,7 @@ Next hop: the IP address of the next hop router or the outgoing interface
 - set r1 connections from (same as internet) to R21
 
 ---
-## Level 9 (Connect a bunch of hosts and 2 to the internet) ✅
+## Level 9 (Connect a bunch of hosts and 2 to the internet)
 
 ### Solution:
 - clear all
@@ -135,7 +135,7 @@ Next hop: the IP address of the next hop router or the outgoing interface
 - create 42.42.42.middle
 
 ---
-## Level 10 ✅
+## Level 10
 
 ### Solution:
 - clear all

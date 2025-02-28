@@ -1,106 +1,113 @@
 # Net_Practice
 
->[!note]
->Summary:
->This document is a System Administration related exercise.
- Version: 3.1
+## 🌐 Project Overview
 
-## 0. Contents
+Net_Practice is a system administration project focused on network configuration and TCP/IP addressing. This project provides hands-on experience with configuring small-scale networks, understanding IP addressing, subnet masks, and routing tables through an interactive web-based interface.
+
+Unlike coding projects, Net_Practice emphasizes practical networking knowledge through progressive exercises that simulate real-world network troubleshooting scenarios.
+
+![Network Interface Example](images/exercise_example.png)
+
+## 🔧 Implementation Details
+
+### Network Concepts Covered
+
+- **IP Addressing**: Configuring and troubleshooting IPv4 addresses
+- **Subnet Masks**: Understanding and applying proper subnet masks
+- **Network Segmentation**: Dividing networks into appropriate subnets
+- **Routing**: Setting up routing tables and default gateways
+- **Connectivity**: Ensuring communication between network segments
+
+### Training Interface
+
+The project uses a browser-based interface that presents 10 progressively challenging network configurations to fix:
+
+- Each level presents a non-functioning network diagram
+- Unshaded fields can be modified to correct the configuration
+- Real-time validation of your solution
+- Logging functionality to help diagnose issues
+
+## 📊 Technical Concepts
+
+### IP Address Fundamentals
+
+IP addresses serve as unique identifiers for devices on a network, divided into:
+- **Public IPs**: Globally unique and internet-accessible
+- **Private IPs**: Used within local networks, not accessible from the internet
+
+### Subnet Masks and CIDR Notation
+
+Subnet masks divide IP addresses into network and host portions:
+
+| CIDR Notation | Subnet Mask     | Total IPs | Common Use Case               |
+|---------------|-----------------|-----------|-------------------------------|
+| /30           | 255.255.255.252 | 4         | Point-to-point links          |
+| /28           | 255.255.255.240 | 16        | Small office network          |
+| /24           | 255.255.255.0   | 256       | Standard local network        |
+| /16           | 255.255.0.0     | 65,536    | Large organization network    |
+
+### Network Devices
+
+- **Switches**: Connect multiple devices within a single network segment
+- **Routers**: Connect different network segments and direct traffic between them
+
+### Routing Tables
+
+Routing tables contain information about available routes to different networks:
+- **Destination**: The network address of the destination
+- **Next Hop**: The IP address of the next router in the path
+- **Default Route**: Used when no specific route matches (often shown as 0.0.0.0/0)
+
+## 🚀 Approach to Solving Levels
+
+### General Strategy
+
+1. Identify the network topology (devices and connections)
+2. Determine the required subnet masks for each network segment
+3. Assign appropriate IP addresses within each subnet
+4. Configure routing tables to enable cross-network communication
+5. Test connectivity and troubleshoot using the logs
+
+### Level-Specific Hints
+
+#### Levels 1-3: Basic Connectivity
+- Ensure devices on the same network segment have:
+  - IP addresses within the same subnet range
+  - Identical subnet masks
+
+#### Levels 4-5: Router Configuration
+- Properly configure router interfaces for each connected segment
+- Ensure devices use their connected router interface as the default gateway
+
+#### Levels 6-10: Advanced Routing
+- Set up proper default routes
+- Configure routing between multiple subnets
+- Ensure consistent subnet masks within network segments
+- Implement correct routes to the internet
+
+## 📝 Learning Outcomes
+
+Through this project, I gained practical knowledge in:
+
+- **IP Addressing**: Understanding how IPv4 addressing and subnetting works
+- **Network Configuration**: Applying proper network parameters for connectivity
+- **Troubleshooting**: Identifying and resolving network configuration issues
+- **Routing Concepts**: Implementing proper routing between network segments
+- **CIDR Notation**: Using CIDR notation to define network ranges efficiently
+
+## 🛠️ Project Structure
+
+The repository contains:
+- 10 level configuration files (one for each completed exercise)
+- Documentation explaining the approach and solutions
+- Reference materials for network concepts
+
+## ⚠️ Note
+
+As this project involves network configuration rather than coding, the deliverables are the configuration files for each level rather than source code. The files demonstrate the correct network parameters for each scenario.
+
+For detailed project requirements, see the [net_practice.md](net_practice.md) file.
+
 ---
 
-1. Preamble
-2. Introduction
-3. General Guidelines
-4. Mandatory part
-5. Submission and peer-evaluation
-
-## 1. Preamble
----
-
-![Preamble Meme](images/preamble.jpeg)
-
-## 2. Introduction
----
-
-This project is a general practical exercise to let you discover networking.
-
-## 3. General Guidelines
----
-
-You will have to configure small-scale networks. To do so, it will be necessary to understand how TCP/IP addressing works.
-
-You will have to complete 10 levels (i.e. 10 exercises) and turn them in your Git repository.
-
->[!note]
->In this project, the networks you will work with are not real ones. They will be available via a training interface that you will open in your web browser.
-
-## 4. Mandatory Part
----
-
-This project is about solving networking problems to make a network run.
-
-	First, download the file attached to the project’s page.
-	Then, extract the files in whatever folder you want.
-	In this folder, run the index.html file.
-	This interface should open in your web browser:
-
-![interface](images/interface.png)
-
-Welcome to NetPractice! :)
-
-As mentioned on the page:
-
-- You can practice if you input your login in the field
-
-- Or you can try the ’correction’ version if you leave the field empty.
-
-There are 10 levels available for training. Below is an example:
-
-![example](images/example.png)
-
-For each level, a non-functioning network diagram appears.
-
-At the top of your window, you will see a goal to achieve: the issues to solve so that the network runs properly. There are two buttons you can use:
-
-- Check again to verify whether your configuration was correct or not.
-
-- Get my config to download your configuration whenever you need to. It will be useful to turn in your assignment.
-
-![interface](images/level.png)
-
-When you have successfully completed a level, a new button will appear. Click on this button to get to the next level.
-
-![buttons](images/buttons.png)
-
->[!warning]
->Before moving to the next level, don’t forget to export your
-configuration using the Get my config button so you can put it in
-your Git repository.
-
-At the bottom of the page, you will see logs. They can be helpful to understand why your configuration is wrong.
-
-![log](images/log.png)
-
-Here is an example of what kind of exercise you will get:
-
-![exercise example](images/exercise_example.png)
-
-To succeed, modify the unshaded fields until your network configuration is correct.
-
-To complete this assignment, it is strongly recommended to understand how addressing works in a network in which there are devices such as routers. Read about TCP/IP addressing.
-
-## 5. Submission and peer-evaluation
----
-
-Turn in your assignment in your Git repository as usual. Only the work inside your repository will be evaluated during the defense. Don’t hesitate to double check the names of your files to ensure they are correct.
-
-Because 10 levels are available in the training interface, you will have to turn 10 files in your repository (1 file per level). Put them at the root of your repository.
-Don’t forget to enter your login in the training interface. Export a file per level using the Get my config button.
-
->[!warning]
-It is very important that you enter your login in the interface.
-
-During defense, you will have to succeed 3 random levels as mentioned on the training platform. Of course, you will have a limited time to do so.
-
->[!warning]
-You are not allowed to use external tools during your evaluation. The use of a simple calculator such as "bc" is tolerated but it will be the limit.
+*This project is part of the 42 School Common Core curriculum.*
